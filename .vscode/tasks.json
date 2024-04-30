@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "👀watch-web",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Web"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "📤publish-forms",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "-r",
+        "win-x64",
+        "--self-contained",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Forms",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign",
+        "-o",
+        "${workspaceFolder}/publish/BlazorHybrid.App.Forms"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "📤publish-wpf",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "-r",
+        "win-x64",
+        "--self-contained",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Wpf",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign",
+        "-o",
+        "${workspaceFolder}/publish/BlazorHybrid.App.Wpf"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "🛠️build-web",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/App/BlazorHybrid.App.Web",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign"
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "🧹clean",
+      "type": "shell",
+      "command": "dotnet clean -v m --nologo -c Debug && dotnet clean -v m --nologo -c Release",
+      "problemMatcher": [],
+    },
+    {
+      "label": "🧪test",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "test",
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+  ]
+}
