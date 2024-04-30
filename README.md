@@ -6,6 +6,7 @@
 * .editorconfig 追加
 * App, View, ViewState, Model の 4 つの構成に整理しフォルダ名やプロジェクト名を変更
 * テストやモックを追加
+* なんとなく Weather ページを日本語化
 
 ![](/doc/image/図1.drawio.png)
 
@@ -26,6 +27,13 @@
   ※スマホアプリは未実装（今後追加したい）
 
 ## トラブルシューティング
+* VSCode でフォルダ開いた直後から大量のエラーが出る  
+  →　以下を試して
+    * タスク「🔄restore」を実行
+    * タスク「🧹clean」を実行
+    * コマンド「開発者:ウィンドウの再読み込み」
+* publish の実行後などに、BlazorHybrid.App.Wpf の Program.cs がエラーになる  
+  →　なぜか知らんが Program.cs を一度開けばエラーが消える
 * [開発コンテナでプロファイルを適用すると「... のファイル システム プロバイダーが見つかりません」と表示されワークスペースが開けない](https://github.com/Tobotobo/dotnet_BlazorHybrid5/issues/1)
 
 ## コマンド
@@ -37,7 +45,9 @@
   * 📤publish-forms
   * 📤publish-wpf
   * 🛠️build-web
+  * 🧪test
   * 🧹clean
+  * 🔄restore
 
 ※ publish ではワークスペース直下に publish フォルダを作成しそこに出力する。
 

@@ -14,7 +14,12 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
     },
     {
       "label": "📤publish-forms",
@@ -31,7 +36,12 @@
         "-o",
         "${workspaceFolder}/publish/BlazorHybrid.App.Forms"
       ],
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
     },
     {
       "label": "📤publish-wpf",
@@ -48,7 +58,12 @@
         "-o",
         "${workspaceFolder}/publish/BlazorHybrid.App.Wpf"
       ],
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
     },
     {
       "label": "🛠️build-web",
@@ -61,13 +76,24 @@
         "/consoleloggerparameters:NoSummary;ForceNoAlign"
       ],
       "group": "build",
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
     },
     {
       "label": "🧹clean",
       "type": "shell",
-      "command": "dotnet clean -v m --nologo -c Debug && dotnet clean -v m --nologo -c Release",
+      "command": "dotnet clean '${workspaceFolder}/src/BlazorHybrid.sln' --nologo -c Debug && dotnet clean '${workspaceFolder}/src/BlazorHybrid.sln' --nologo -c Release",
+      "group": "build",
       "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
     },
     {
       "label": "🧪test",
@@ -75,9 +101,31 @@
       "type": "shell",
       "args": [
         "test",
+        "${workspaceFolder}/src/BlazorHybrid.sln",
       ],
       "group": "build",
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
+    },
+    {
+      "label": "🔄restore",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "restore",
+        "${workspaceFolder}/src/BlazorHybrid.sln",
+      ],
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "clear": true,
+        "echo": true,
+      },
     },
   ]
 }
